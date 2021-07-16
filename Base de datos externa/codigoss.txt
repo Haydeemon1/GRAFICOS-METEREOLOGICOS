@@ -1,0 +1,31 @@
+codigo,estacion,altitud,region
+ALT,Altdorf,438,Central Alpine north slope
+ANT,Andermatt,1438,Central Alpine north slope
+RAG,Bad Ragaz,496,Northern and central Grisons
+BAS,Basel / Binningen,316,Eastern Jura
+BER,Bern / Zollikofen,553,Central plateau
+CHM,Chaumont,1136,Western Jura
+CHD,Château-d'Oex,1028,Western Alpine north slope
+GSB,Col du Grand St-Bernard,2472,Alpine south side
+DAV,Davos,1594,Northern and central Grisons
+ELM,Elm,958,Eastern Alpine north slope
+ENG,Engelberg,1036,Central Alpine north slope
+GVE,Genève / Cointrin,411,Western plateau
+GRH,Grimsel Hospiz,1980,Western Alpine north slope
+GRC,Grächen,1605,Valais
+JUN,Jungfraujoch,3571,Western Alpine north slope
+CDF,La Chaux-de-Fonds,1017,Western Jura
+OTL,Locarno / Monti,367,Alpine south side
+LUG,Lugano,273,Alpine south side
+LUZ,Luzern,454,Central plateau
+MER,Meiringen,589,Western Alpine north slope
+NEU,Neuchâtel,485,Western plateau
+PAY,Payerne,490,Western plateau
+SBE,S. Bernardino,1639,Alpine south side
+SAM,Samedan,1709,Engadine
+SAR,Sargans,585,Northern and central Grisons
+SIA,Segl-Maria,1804,Engadine
+SIO,Sion,482,Valais
+STG,St. Gallen,776,North-eastern plateau
+SAE,Säntis,2501,Eastern Alpine north slope
+SMA,Zürich / Fluntern,556,North-eastern plateau

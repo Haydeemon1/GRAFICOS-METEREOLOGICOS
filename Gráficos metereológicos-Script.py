@@ -3,11 +3,9 @@ import matplotlib.pyplot as plt
 #"estaciones" es un Data.Frame con la informacion de cada estación.
 estaciones = pd.read_csv('codigoss.txt', delimiter = ',', index_col = [0])
 print(estaciones['estacion'])
-
 def graf():  #Función para graficar la temperatura y/o precipitacion de cada estación.
     fig, ax = plt.subplots()  #Nos permite tener dos gráficas.
     ax.set_xlabel('Año')  #Subtítulo del eje "x".
-    
     if n==2: #gráfica para la temperatura 
         ax.plot(izq, color = 'green') #Uso de "izq" para graficar 
         ax.set_ylabel(F'{datos.columns[-1]}', color='green') #Subtítulo del eje "y".
@@ -44,29 +42,23 @@ def graf():  #Función para graficar la temperatura y/o precipitacion de cada es
     plt.show()
 
 while True:  #Bucle para graficar las estaciones.
-
     print('\n\nIngrese "cancel" para terminar la visualización') #"codigo_observatorio" es lo que ingresa el usuario.
     codigo_observatorio = input('Ingrese el codigo de la estacion: ') # Ingreso del código
-    
     if codigo_observatorio == 'cancel':  #Control para terminar de graficar.
         break
-    
     elif  F'{codigo_observatorio}' in str(estaciones.index[0:]):  #Lectura Temperatura y/o Precipitación.
         lectura = pd.read_fwf(F'homog_mo_{codigo_observatorio}.txt') #"lectura" es un Data.Frame con una sola columna
-    
         for i in range(18):  #Identificacion la linea en donde estan los datos Temperatura y/o Precipitación.
             if 'Year' in lectura.iloc[i][0]:
                 #"datos" es un Data.Frame con columnas y filas manejables.
                 datos = pd.read_csv(F'homog_mo_{codigo_observatorio}.txt', header = i + 1, delimiter = '\s+')
         #"st" es un lista con la información de la estacion ingresada.
         st = [estaciones['estacion'][codigo_observatorio], estaciones['altitud'][codigo_observatorio], estaciones['region'][codigo_observatorio]]   
-        
         if 'Precipitation' in datos.columns and 'Temperature' in datos.columns:            
             izq = datos.groupby('Year')[datos.columns[-2]].mean()  #"izq" Es una serie de la Temperatura de la estación
             der = datos.groupby('Year')[datos.columns[-1]].mean()  #"der" Es una serie de la Precipitación de la estación 
             n = 0  #"n" es un controlador al tener Temperatura y/o precipitación.
             graf() #Para graficar los datos de la estación ingresada.
-
         elif 'Precipitation' in datos.columns or 'Temperature' in datos.columns:
             if 'Precipitation' in datos.columns:
                 der = datos.groupby('Year')[datos.columns[-1]].mean() #"der" Es una serie de la Precipitación de la estación 
